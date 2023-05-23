@@ -1,6 +1,8 @@
 const canvas = document.querySelector('#canvas');
 
 function createGrid(){
+    const grid = document.createElement('div');
+    grid.classList.add('grid');
     for(let i = 0; i < 16; i++){
         const canvasRow = document.createElement('div');
         canvasRow.classList.add('gridRow');
@@ -9,8 +11,9 @@ function createGrid(){
             canvasSquare.classList.add('gridSquare');
             canvasRow.appendChild(canvasSquare);
         }
-        canvas.appendChild(canvasRow);
+        grid.appendChild(canvasRow);
     }
+    canvas.appendChild(grid);
 }
 
 createGrid();
