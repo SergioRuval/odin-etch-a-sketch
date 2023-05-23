@@ -9,11 +9,17 @@ function createGrid(){
         for(let j = 0; j < 16; j++){
             const canvasSquare = document.createElement('div');
             canvasSquare.classList.add('gridSquare');
+            canvasSquare.addEventListener('mouseover', hoverOnSquare);
             canvasRow.appendChild(canvasSquare);
         }
         grid.appendChild(canvasRow);
     }
     canvas.appendChild(grid);
+}
+
+function hoverOnSquare(e){
+    const square = e.target;
+    square.classList.add('squareHover');
 }
 
 createGrid();

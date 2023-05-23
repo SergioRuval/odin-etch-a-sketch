@@ -23,3 +23,7 @@
 .gridRow {
     display: flex;
 }
+
+.squareHover {
+    background-color: aqua;
+}
