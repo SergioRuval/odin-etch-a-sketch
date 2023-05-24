@@ -10,7 +10,7 @@ function createGrid(){
             const canvasSquare = document.createElement('div');
             canvasSquare.classList.add('gridSquare');
             canvasSquare.addEventListener('mouseover', hoverOnSquare);
-            canvasSquare.addEventListener('mouseleave', exitSquare);
+            // canvasSquare.addEventListener('mouseout', exitSquare);
             canvasRow.appendChild(canvasSquare);
         }
         grid.appendChild(canvasRow);
@@ -26,6 +26,11 @@ function hoverOnSquare(e){
 function exitSquare(e){
     const square = e.target;
     square.classList.remove('squareHover');
+}
+
+function paintSquare(e){
+    const square = e.target;
+    square.style.backgroundColor = "aqua";
 }
 
 createGrid();
