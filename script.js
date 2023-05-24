@@ -50,4 +50,11 @@ function changeGridSize(e){
     createGrid(newSize);
 }
 
+function clearGrid(e){
+    const paintedSquares = document.querySelectorAll(".squareHover");
+    paintedSquares.forEach(square => {
+        square.classList.remove("squareHover");
+    });
+}
+
 initializeCanvas();
