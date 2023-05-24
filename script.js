@@ -10,6 +10,7 @@ function createGrid(){
             const canvasSquare = document.createElement('div');
             canvasSquare.classList.add('gridSquare');
             canvasSquare.addEventListener('mouseover', hoverOnSquare);
+            canvasSquare.addEventListener('mouseleave', exitSquare);
             canvasRow.appendChild(canvasSquare);
         }
         grid.appendChild(canvasRow);
@@ -20,6 +21,11 @@ function createGrid(){
 function hoverOnSquare(e){
     const square = e.target;
     square.classList.add('squareHover');
+}
+
+function exitSquare(e){
+    const square = e.target;
+    square.classList.remove('squareHover');
 }
 
 createGrid();
