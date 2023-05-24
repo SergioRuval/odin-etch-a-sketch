@@ -38,8 +38,13 @@ function paintSquare(e){
 }
 
 function changeGridSize(e){
-    let newSize = prompt("Cuántos cuadros?");
-    Number.parseInt(newSize);
+    let newSize = prompt("Ingresa un tamaño entre 5 y 100");
+    newSize = Number.parseInt(newSize);
+    while(isNaN(newSize) || newSize < 5 || newSize > 100){
+        newSize = prompt("Cantidad no válida, ingresa un nuevo número");
+        newSize = Number.parseInt(newSize);
+    }
+    
     const lastChild = document.querySelector('#canvas>.grid');
     canvas.removeChild(lastChild);
     createGrid(newSize);
