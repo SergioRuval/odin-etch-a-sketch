@@ -1,12 +1,16 @@
 const canvas = document.querySelector('#canvas');
 
-function createGrid(){
+function initializeCanvas(){
+    createGrid(16);
+}
+
+function createGrid(gridSize){
     const grid = document.createElement('div');
     grid.classList.add('grid');
-    for(let i = 0; i < 16; i++){
+    for(let i = 0; i < gridSize; i++){
         const canvasRow = document.createElement('div');
         canvasRow.classList.add('gridRow');
-        for(let j = 0; j < 16; j++){
+        for(let j = 0; j < gridSize; j++){
             const canvasSquare = document.createElement('div');
             canvasSquare.classList.add('gridSquare');
             canvasSquare.addEventListener('mouseover', hoverOnSquare);
@@ -33,4 +37,12 @@ function paintSquare(e){
     square.style.backgroundColor = "aqua";
 }
 
-createGrid();
+function changeGridSize(e){
+    let newSize = prompt("Cuántos cuadros?");
+    Number.parseInt(newSize);
+    const lastChild = document.querySelector('#canvas>.grid');
+    canvas.removeChild(lastChild);
+    createGrid(newSize);
+}
+
+initializeCanvas();
